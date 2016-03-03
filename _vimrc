@@ -1,11 +1,31 @@
-"新しい行のインデントを現在行と同じにする
+set nocompatible
+
 set autoindent 
+set smartindent
+set smarttab
+
+set guifont=RictyDiminishedDiscord-Regular:h12
 
 "クリップボードをMacと連携する
 set clipboard=unnamed
+
+" insertモードから抜ける
+inoremap <silent> jj <ESC>
+inoremap <silent> <C-j> j
+inoremap <silent> kk <ESC>
+inoremap <silent> <C-k> k
  
-"タブの代わりに空白文字を指定する
+" 挿入モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+"インデント関連
 set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
  
 "変更中のファイルでも、保存しないで他のファイルを表示する
 set hidden
@@ -27,15 +47,6 @@ set smarttab
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
  
-" 検索結果のハイライトをEsc連打でクリアする
-nnoremap <ESC><ESC> :nohlsearch<CR>
-
-"カラースキーマを設定
-colorscheme molokai
-syntax on
-let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
 
 set nocompatible
  
@@ -63,6 +74,10 @@ set nocompatible
  " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplete.vim'
 
  call neobundle#end()
 
@@ -75,4 +90,8 @@ NeoBundle 'tpope/vim-rails'
 
 let NERDTreeShowHidden = 1
 
+" colorscheme
+syntax on 
+colorscheme molokai
+set t_Co=256
 
