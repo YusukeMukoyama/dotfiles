@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/private/var/folders/qj/y22mc5dn0f5f4rbtgl1yhz8w0000gq/T/1fac02dd-0302-4797-ad0c-5d6bba9fdff5/lp2'
 let g:netrw_dirhist_2='/Users/y-mukoyama/loanbot'
 let g:netrw_dirhist_3='/Users/y-mukoyama/loanbot/scripts'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/y-mukoyama'
 let g:netrw_dirhist_6='/Users/y-mukoyama/loanbot'
 let g:netrw_dirhist_7='/Users/y-mukoyama'
 let g:netrw_dirhist_8='/Users/y-mukoyama/loanbot'
+let g:netrw_dirhist_9='/home/ec2-user/dotfiles/.vim'

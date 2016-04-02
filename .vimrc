@@ -6,28 +6,6 @@ set clipboard=unnamed
 "ハイライト表示
 set hlsearch
 
-" insertモードから抜ける
-inoremap <silent> jj <ESC>
-inoremap <silent> っj <ESC>
-
-" 挿入モードでのカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
-" キーバインド
-nnoremap sj <C-w>j
-nnoremap sk <C-w>k
-nnoremap sl <C-w>l
-nnoremap sh <C-w>h
-nnoremap あ a
-nnoremap い i
-nnoremap う u
-nnoremap お o
-nnoremap っd dd
-nnoremap っy yy
-
 "インデント関連
 set autoindent 
 set smartindent
@@ -51,14 +29,13 @@ set number
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
 
-" Note: Skip initialization for vim-tiny or vim-small.
+" Neobundle
 if !1 | finish | endif
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin()
   NeoBundleFetch 'Shougo/neobundle.vim'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'tpope/vim-rails'
@@ -70,9 +47,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundle 'AtsushiM/search-parent.vim'
   NeoBundle 'AtsushiM/sass-compile.vim'
 call neobundle#end()
-
 filetype plugin indent on
-
 NeoBundleCheck
 
 let NERDTreeShowHidden = 1
@@ -88,6 +63,28 @@ filetype plugin on
 let g:netrw_nogx = 1 
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" insertモードから抜ける
+inoremap <silent> jj <ESC>
+inoremap <silent> っj <ESC>
+
+" 挿入モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+" キーバインド
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
 
 "------------------------------------
 " sass
