@@ -36,6 +36,7 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set encoding=utf-8
  
 "変更中のファイルでも、保存しないで他のファイルを表示する
 set hidden
@@ -45,52 +46,38 @@ set incsearch
  
 "行番号を表示する
 set number
- 
-set tabstop=2
-set encoding=utf-8
-set autoindent
 
 " grep検索を設定する
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
- 
- " Note: Skip initialization for vim-tiny or vim-small.
- if !1 | finish | endif
 
- if has('vim_starting')
-   if &compatible
-     set nocompatible               " Be iMproved
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 
-   endif
+if has('vim_starting')
+  if &compatible
+    set nocompatible               
+  endif
 
-   " Required:
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
- " Required:
- call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'tpope/vim-rails'
+  NeoBundle 'tomtom/tcomment_vim'
+  NeoBundle 'mattn/emmet-vim'
+  NeoBundle 'tpope/vim-surround'
+  NeoBundle 'open-browser.vim'
+  NeoBundle 'kannokanno/previm'  
+  NeoBundle 'AtsushiM/search-parent.vim'
+  NeoBundle 'AtsushiM/sass-compile.vim'
+call neobundle#end()
 
- " Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+filetype plugin indent on
 
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'open-browser.vim'
-NeoBundle 'kannokanno/previm'  
-NeoBundle 'AtsushiM/search-parent.vim'
-NeoBundle 'AtsushiM/sass-compile.vim'
-
- call neobundle#end()
-
- " Required:
- filetype plugin indent on
-
- " If there are uninstalled bundles found on startup,
- " this will conveniently prompt you to install them.
- NeoBundleCheck
+NeoBundleCheck
 
 let NERDTreeShowHidden = 1
 
@@ -102,21 +89,19 @@ set t_Co=256
 filetype plugin on
 
 " open-browser.vim
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
+let g:netrw_nogx = 1 
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 "------------------------------------
 " sass
 "------------------------------------
-""{{{
 let g:sass_compile_auto = 1
 let g:sass_compile_cdloop = 5
 let g:sass_compile_cssdir = ['css', 'stylesheet']
 let g:sass_compile_file = ['scss', 'sass']
 let g:sass_compile_beforecmd = ''
 let g:sass_compile_aftercmd = ''
-"}}}
 
 "ambigous width
 set ambiwidth=double
