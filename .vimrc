@@ -51,30 +51,6 @@ set number
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
  
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  NeoBundle 'scrooloose/nerdtree'
-  NeoBundle 'tpope/vim-rails'
-  NeoBundle 'tomtom/tcomment_vim'
-  NeoBundle 'mattn/emmet-vim'
-  NeoBundle 'tpope/vim-surround'
-  NeoBundle 'open-browser.vim'
-  NeoBundle 'kannokanno/previm'  
-  NeoBundle 'AtsushiM/search-parent.vim'
-  NeoBundle 'AtsushiM/sass-compile.vim'
-call neobundle#end()
-
-filetype plugin indent on
-
-NeoBundleCheck
-
 let NERDTreeShowHidden = 1
 
 " colorscheme
