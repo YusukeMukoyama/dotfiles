@@ -55,10 +55,6 @@ set grepprg=grep\ -nh
 if !1 | finish | endif
 
 if has('vim_starting')
-  if &compatible
-    set nocompatible               
-  endif
-
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
