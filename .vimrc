@@ -71,12 +71,8 @@ set grepprg=grep\ -nh
  call neobundle#begin(expand('~/.vim/bundle/'))
 
  " Let NeoBundle manage NeoBundle
- " Required:
- NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
- " My Bundles here:
- " Refer to |:NeoBundle-examples|.
- " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tomtom/tcomment_vim'
