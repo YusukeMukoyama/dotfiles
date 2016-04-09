@@ -1,3 +1,38 @@
+" dein.vim
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('./'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('mattn/emmet-vim')
+call dein#add('tpope/vim-surround')
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
 set guifont=RictyDiminishedDiscord-Regular:h12
 
 "クリップボードをMacと連携する
@@ -6,7 +41,6 @@ set clipboard=unnamed
 "ハイライト表示
 set hlsearch
 
-<<<<<<< HEAD
 " insertモードから抜ける
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
@@ -23,8 +57,6 @@ nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 
-=======
->>>>>>> 39e8571ada1afa5469f0c9f9d2a9e0a9fccb110f
 "インデント関連
 set autoindent 
 set smartindent
@@ -95,7 +127,6 @@ let g:sass_compile_file = ['scss', 'sass']
 let g:sass_compile_beforecmd = ''
 let g:sass_compile_aftercmd = ''
 
->>>>>>> 39e8571ada1afa5469f0c9f9d2a9e0a9fccb110f
 "ambigous width
 set ambiwidth=double
 
@@ -111,3 +142,4 @@ set ttymouse=xterm2
 " edit vimrc
 nnoremap <F5> :<C-u>edit ~/.vimrc<CR>
 nnoremap <F6> :<C-u>sourc ~/.vimrc<CR>
+
