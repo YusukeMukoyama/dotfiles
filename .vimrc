@@ -7,18 +7,25 @@ endif
 set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('./'))
+call dein#begin(expand('~/.vim/repos'))
 
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('marcus/rsense')
+call dein#add('supermomonga/neocomplete-rsense.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('mattn/emmet-vim')
 call dein#add('tpope/vim-surround')
-
+call dein#add('scrooloose/syntastic')
+call dein#add('scrooloose/syntastic')
+call dein#add('tpope/vim-endwise')
+call dein#add('Shougo/unite.vim')
+call dein#add('scrooloose/nerdtree')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
@@ -32,6 +39,39 @@ filetype plugin indent on
 "if dein#check_install()
 "  call dein#install()
 "endif
+
+" syntax, rubocop
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
+
+" rsense
+let g:rsenseUseOmniFunc = 1
+
+" unite
+let g:unite_enable_start_insert = 1
+let g:unite_enable_split_vertically = 0
+let g:unite_winwidth = 40
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap <silent> ,um :<C-u>Unite  file_mru <CR>
+nnoremap <silent> ,urc :<C-u>Unite file_rec/async:app/controllers/ <CR>
+nnoremap <silent> ,urfc :<C-u>Unite file file/new -input=app/controllers/ <CR>
+nnoremap <silent> ,urm :<C-u>Unite file_rec/async:app/models/ <CR>
+nnoremap <silent> ,urfm :<C-u>Unite file file/new -input=app/models/ <CR>
+nnoremap <silent> ,urv :<C-u>Unite file_rec/async:app/views/ <CR>
+nnoremap <silent> ,urfv :<C-u>Unite file file/new -input=app/views/ <CR>
+nnoremap <silent> ,urs :<C-u>Unite file_rec/async:app/assets/stylesheets/ <CR>
+nnoremap <silent> ,urfs :<C-u>Unite file file/new -input=app/assets/stylesheets/ <CR>
+nnoremap <silent> ,urj :<C-u>Unite file_rec/async:app/assets/javascripts/ <CR>
+nnoremap <silent> ,urfj :<C-u>Unite file file/new -input=app/assets/javascripts/ <CR>
+nnoremap <silent> ,uro :<C-u>Unite file_rec/async:config/ <CR>
+nnoremap <silent> ,urfo :<C-u>Unite file file/new -input=config/ <CR>
+nnoremap <silent> ,url :<C-u>Unite file_rec/async:lib/ <CR>
+nnoremap <silent> ,urfl :<C-u>Unite file file/new -input=lib/ <CR>
+nnoremap <silent> ,urr :<C-u>Unite file_rec/async:spec/ <CR>
+nnoremap <silent> ,urfr :<C-u>Unite file file/new -input=spec/ <CR>
+
+" nerdtree
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 set guifont=RictyDiminishedDiscord-Regular:h12
 
@@ -116,6 +156,10 @@ nnoremap う u
 nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
+
+" github
+runtime ftplugin/man.vim
+nnoremap gc :<C-u>!git<Space>
 
 "------------------------------------
 " sass

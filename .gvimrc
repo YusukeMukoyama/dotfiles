@@ -20,6 +20,9 @@ set guicursor=a:blinkon0
 set mouse=a
 set nomousefocus
 
+" 挿入モードから抜けた際にIMEをオフ
+set imdisable
+
 " transparency
 function! s:toggle_transparence()
     if &transparency == 10
