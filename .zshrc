@@ -1,3 +1,6 @@
+#phpbrew
+source $HOME/.phpbrew/bashrc
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors

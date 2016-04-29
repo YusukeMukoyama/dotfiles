@@ -26,6 +26,7 @@ call dein#add('scrooloose/syntastic')
 call dein#add('tpope/vim-endwise')
 call dein#add('Shougo/unite.vim')
 call dein#add('scrooloose/nerdtree')
+call dein#add('valloric/matchtagalways')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
@@ -72,8 +73,19 @@ nnoremap <silent> ,urfr :<C-u>Unite file file/new -input=spec/ <CR>
 
 " nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let g:mta_use_matchparen_group = 1
 
-set guifont=RictyDiminishedDiscord-Regular:h12
+"MatchTagAlways
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'php' : 1,
+    \}
+
+" font
+set guifont=RictyDiminishedDiscord-Regular:h14
 
 "クリップボードをMacと連携する
 set clipboard=unnamed
@@ -81,15 +93,19 @@ set clipboard=unnamed
 "ハイライト表示
 set hlsearch
 
+" 表示行単位の上下移動
+noremap j gj
+noremap k gk
+noremap <Down> gj
+noremap <Up> gk
+
+"論理行単位の上下移動
+noremap gj j
+noremap gk k
+
 " insertモードから抜ける
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
-
-" 挿入モードでのカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
 " キーバインド
 nnoremap sj <C-w>j
@@ -107,6 +123,12 @@ set softtabstop=2
 set shiftwidth=2
 set encoding=utf-8
  
+"ファイルタイプによるインデント設定
+augroup fileTypeIndent
+  autocmd!
+  autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
+
 "ファイル関連
 set hidden
 set autoread
@@ -157,10 +179,6 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 
-" github
-runtime ftplugin/man.vim
-nnoremap gc :<C-u>!git<Space>
-
 "------------------------------------
 " sass
 "------------------------------------
@@ -185,5 +203,5 @@ set ttymouse=xterm2
 
 " edit vimrc
 nnoremap <F5> :<C-u>edit ~/.vimrc<CR>
-nnoremap <F6> :<C-u>sourc ~/.vimrc<CR>
+nnoremap <F6> :<C-u>source ~/.vimrc<CR>
 
