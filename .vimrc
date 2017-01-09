@@ -51,6 +51,7 @@ call dein#begin(expand('~/.vim/repos'))
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
 " Add or remove your plugins here:
 call dein#add('Shougo/vimshell.vim')
