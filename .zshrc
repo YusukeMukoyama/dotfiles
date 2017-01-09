@@ -1,12 +1,19 @@
-#phpbrew
-source $HOME/.phpbrew/bashrc
+# keybind
+bindkey -e
+
+# direnv
+eval "$(direnv hook zsh)"
+export EDITOR=vim
+
+# postgreSQL 保存場所
+export PGDATA="/usr/local/var/postgres"
+
+#mongoDB
+export PATH="/usr/local/opt/mongodb/bin/mongod:$PATH"
 
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
-
-# emacs風キーバインドにする
-bindkey -e
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
@@ -15,7 +22,6 @@ SAVEHIST=1000000
 
 # プロンプト
 PROMPT="%{${fg[green]}%}[%n@%m %~]%{${reset_color}%}$ "
-
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -65,23 +71,18 @@ add-zsh-hook precmd _update_vcs_info_msg
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 
-# beep を無効にする
-setopt no_beep
-
 # フローコントロールを無効にする
 setopt no_flow_control
 
 # Ctrl+Dでzshを終了しない
 setopt ignore_eof
 
-# '#' 以降をコメントとして扱う
-setopt interactive_comments
-
 # ディレクトリ名だけでcdする
 setopt auto_cd
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
@@ -148,8 +149,6 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
-
 # search history
 function peco-select-history() {
   local tac
@@ -165,3 +164,7 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export LC_ALL=en_US.UTF-8
+eval "$(pyenv init -)"
