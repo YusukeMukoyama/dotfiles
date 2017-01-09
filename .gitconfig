@@ -1,0 +1,25 @@
+[user]
+name = YusukeMukoyama
+email = yusuke.mukoyama@gmail.com
+
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[alias]
+  a = add
+  b = branch
+  co = checkout
+  cm = commit
+  logg = log --graph --all --decorate
+  log1 = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+  # ファイル名のみの差分を表示する
+  difff = diff --name-only
+  # staged diff
+  diffs = diff --cached
