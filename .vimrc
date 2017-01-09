@@ -46,7 +46,7 @@ endif
 set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('~/.vim/repos'))
+call dein#begin(expand('~/.vim/'))
 
 " Let dein manage dein
 " Required:
