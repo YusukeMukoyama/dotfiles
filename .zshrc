@@ -112,6 +112,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 alias la='ls -a'
 alias ll='ls -l'
+alias g='git'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -120,7 +121,7 @@ alias sudo='sudo '
 alias -g L='| less'
 alias -g G='| grep'
 alias vi='vim'
-
+alias grep='grep -n --color=auto'
 # C で標準出力をクリップボードにコピーする
 # mollifier delta blog : http://mollifier.hatenablog.com/entry/20100317/p1
 if which pbcopy >/dev/null 2>&1 ; then

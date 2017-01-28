@@ -26,27 +26,31 @@ set t_Co=254
 
 "インデント関連
 set autoindent
-set smartindent
+set nosmartindent
 set smarttab
 set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set encoding=utf-8
+setlocal indentkeys+=0#
 
 "自動整形
 nnoremap <silent><C-l> gg<S-v>G=<C-o><C-o>
 
 " dein.vim
-if &compatible
-  set nocompatible
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
 " Required:
-set runtimepath^=~/.vim/repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin(expand('~/.vim/'))
+call dein#begin(s:dein_dir)
 
 " Let dein manage dein
 " Required:
@@ -70,11 +74,15 @@ call dein#add('hokaccha/vim-html5validator')
 
 " Required:
 call dein#end()
+call dein#save_state()
+
+if dein#check_install()
+  call dein#install()
+endif
+
 
 " Required:
 filetype plugin indent on
-
-
 
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
@@ -84,6 +92,7 @@ nnoremap <silent> ff :<C-u>VimFiler<CR>
 " nerdtree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let g:mta_use_matchparen_group = 1
+let NERDTreeShowHidden = 1
 
 "MatchTagAlways
 let g:mta_filetypes = {
