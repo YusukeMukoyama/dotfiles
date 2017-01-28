@@ -113,6 +113,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias la='ls -a'
 alias ll='ls -l'
 alias g='git'
+alias gvim='open -a MacVim'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
