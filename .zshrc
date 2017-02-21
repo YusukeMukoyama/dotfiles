@@ -5,6 +5,9 @@ bindkey -e
 eval "$(direnv hook zsh)"
 export EDITOR=vim
 
+# hub
+eval "$(hub alias -s)"
+
 # postgreSQL 保存場所
 export PGDATA="/usr/local/var/postgres"
 

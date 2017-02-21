@@ -10,11 +10,12 @@ email = yusuke.mukoyama@gmail.com
   grep = auto
 
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/y.mukoyama/.gitignore_global
 
 [alias]
   a = add
   b = branch
+  s = status
   ba = branch -a
   co = checkout
   cm = commit
@@ -24,3 +25,6 @@ email = yusuke.mukoyama@gmail.com
   difff = diff --name-only
   # staged diff
   diffs = diff --cached
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
