@@ -10,14 +10,14 @@ colorscheme hybrid
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-set columns=200
+set columns=400
 set lines=80
 
 set langmenu=en_US.UTF-8
 lang C
 set helplang=en
 
-set guifont=RobotoMonoForPowerline-Regular:h14
+set guifont=RobotoMonoForPowerline-Regular:h12
 set antialias
 set guicursor=a:blinkon0
 set showtabline=2

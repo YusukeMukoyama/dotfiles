@@ -25,7 +25,8 @@ email = yusuke.mukoyama@gmail.com
   cma = commit -a
   cmam = commit -am
   pr = pull-request
-  l = log --graph --remotes --tags --branches --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+  l = log --graph --decorate --all --oneline
+  de = branch --merged | egrep -v 'develop|master' | xargs git branch -d
   logg = log --graph --all --decorate
   # ファイル名のみの差分を表示する
   difff = diff --name-only

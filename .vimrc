@@ -22,6 +22,7 @@ set showmatch
 set laststatus=2
 set showtabline=2
 set noshowmode
+set noundofile
 set t_Co=254
 
 "インデント関連
