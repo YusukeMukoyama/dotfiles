@@ -172,5 +172,7 @@ bindkey '^r' peco-select-history
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 eval "$(pyenv init -)"
+export PATH="/usr/local/Cellar/ruby/2.4.0/bin:$PATH"

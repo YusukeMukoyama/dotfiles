@@ -1,6 +1,6 @@
 [user]
-name = YusukeMukoyama
-email = yusuke.mukoyama@gmail.com
+	name = Yusuke Mukoyama
+	email = yusuke.mukoyama@gmail.com
 
 [color]
   status = auto
@@ -11,6 +11,7 @@ email = yusuke.mukoyama@gmail.com
 
 [core]
 	excludesfile = /Users/y.mukoyama/.gitignore_global
+	editor = vim
 
 [alias]
   a = add
@@ -38,3 +39,5 @@ email = yusuke.mukoyama@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
+[commit]
+	template = /Users/y.mukoyama/.stCommitMsg
