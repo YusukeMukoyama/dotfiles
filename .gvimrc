@@ -17,7 +17,7 @@ set langmenu=en_US.UTF-8
 lang C
 set helplang=en
 
-set guifont=RobotoMonoForPowerline-Regular:h11
+set guifont=RobotoMonoForPowerline-Regular:h10
 set antialias
 set guicursor=a:blinkon0
 set showtabline=2

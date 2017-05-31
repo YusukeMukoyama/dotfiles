@@ -110,7 +110,7 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   " Load TOML
-  let g:rc_dir = expand('~/.vim/rc')
+  let g:rc_dir = expand('~/dotfiles')
   let s:toml   = g:rc_dir . '/dein.toml'
 
   " Cache TOML
